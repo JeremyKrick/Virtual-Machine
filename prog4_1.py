@@ -24,7 +24,7 @@ def Parse(tokens):
 
 def Parse(tokens):
     if(isValid(tokens)): True
-    elif(tokens[0] == "push" or tokens[0] == "save" or tokens[0] == "get" and tokens[0][1].lstrip('-').isdigit()): True
+    elif((tokens[0] == "push" or tokens[0] == "save" or tokens[0] == "get") and tokens[1].lstrip('-').isdigit()): True
     else:
         raise ValueError("Parse error: " + tokens[0])
     return tokens
