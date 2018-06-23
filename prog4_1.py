@@ -1,3 +1,4 @@
+import sys
 def Tokenize(str):
         words = str.split()
         for n, i in enumerate(words):
