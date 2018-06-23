@@ -8,6 +8,6 @@ class Tokenize():
                     words[n] == "sub" or words[n] == "mul" or words[n] == "div" or 
                     words[n] == "mod" or words[n] == "skip" or words[n] == "save" or 
                     words[n] == "get"): True
-                elif words[n].isdigit(): True
+                elif words[n].lstrip('-').isdigit(): True
                 else:
                     raise ValueError("Unexpected Token: " + words[n])
