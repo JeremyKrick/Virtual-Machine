@@ -1,52 +1,51 @@
 class StackMachine:
-    #CurrentLine = 0
+    CurrentLine = 0
     #save = []
     def __init__(self, items):
         self.items = []
         self.Execute(items)
         self.save = []
-        self.CurrentLine = 0
         #print(items)
         
     def push(self, item):
-        self.CurrentLine += 1
+        StackMachine.CurrentLine += 1
         self.items.append(item)
         #print(item)
 
     def pop(self):
-        self.CurrentLine += 1
+        StackMachine.CurrentLine += 1
         return self.items.pop()
     
     def add(self):
-        self.CurrentLine += 1
+        StackMachine.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 + var2
         self.push(var3)
 
     def sub(self):
-        self.CurrentLine += 1
+        StackMachine.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 - var2
         self.push(var3)
     
     def mul(self):
-        self.CurrentLine += 1
+        StackMachine.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 * var2
         self.push(var3)
 
     def div(self):
-        self.CurrentLine += 1
+        StackMachine.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 / var2
         self.push(var3)
 
     def mod(self):
-        self.CurrentLine += 1
+        StackMachine.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 % var2
@@ -56,18 +55,18 @@ class StackMachine:
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         if(var1 == '0'):
-            self.CurrentLine += var2
+            StackMachine.CurrentLine += var2
         else:
-            self.CurrentLine += 1
+            StackMachine.CurrentLine += 1
     
     def save(self):
-        self.CurrentLine += 1
+        StackMachine.CurrentLine += 1
         var1 = int(self.items.pop())
-        self.save.append(var1)
+        StackMachine.save.append(var1)
 
     def get(self, item):
-        self.CurrentLine += 1
-        var1 = self.save[-1]
+        StackMachine.CurrentLine += 1
+        var1 = StackMachine.save[-1]
         self.push(var1)
     
     def Execute(self, tokens):
