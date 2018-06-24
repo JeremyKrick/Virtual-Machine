@@ -62,7 +62,7 @@ class StackMachine:
     def save(self):
         StackMachine.CurrentLine += 1
         var1 = int(self.items.pop())
-        save.append(var1)
+        StackMachine.save.append(var1)
 
     def get(self, item):
         StackMachine.CurrentLine += 1
