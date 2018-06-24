@@ -4,7 +4,7 @@ class StackMachine:
     def __init__(self, items):
         self.items = []
         self.Execute(items)
-        self.save = []
+        self.saved = []
         #print(items)
         
     def push(self, item):
@@ -62,11 +62,11 @@ class StackMachine:
     def save(self):
         StackMachine.CurrentLine += 1
         var1 = int(self.items.pop())
-        StackMachine.save.append(var1)
+        StackMachine.saved.append(var1)
 
     def get(self, item):
         StackMachine.CurrentLine += 1
-        var1 = StackMachine.save[-1]
+        var1 = StackMachine.saved[-1]
         self.push(var1)
     
     def Execute(self, tokens):
