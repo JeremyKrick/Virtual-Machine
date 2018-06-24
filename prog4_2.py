@@ -1,9 +1,10 @@
 class StackMachine:
     CurrentLine = 0
-    save = []
+    #save = []
     def __init__(self, items):
         self.items = []
         self.Execute(items)
+        self.save = []
         #print(items)
         
     def push(self, item):
