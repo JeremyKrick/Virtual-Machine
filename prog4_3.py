@@ -13,7 +13,7 @@ def main():
     #print(validTokens)
     for tokens in validTokens: 
         Parse(tokens)
-        #print(Parse(tokens))
+        print(Parse(tokens))
     #print("Number of lines: ", len(validTokens))
 
     sm = StackMachine() # Instantiate StackMachine class
