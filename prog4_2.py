@@ -9,44 +9,44 @@ class StackMachine:
         #print(items)
         
     def push(self, item):
-        CurrentLine += 1
+        self.CurrentLine += 1
         self.items.append(item)
         #print(item)
 
     def pop(self):
-        CurrentLine += 1
+        self.CurrentLine += 1
         return self.items.pop()
     
     def add(self):
-        CurrentLine += 1
+        self.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 + var2
         self.push(var3)
 
     def sub(self):
-        CurrentLine += 1
+        self.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 - var2
         self.push(var3)
     
     def mul(self):
-        CurrentLine += 1
+        self.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 * var2
         self.push(var3)
 
     def div(self):
-        CurrentLine += 1
+        self.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 / var2
         self.push(var3)
 
     def mod(self):
-        CurrentLine += 1
+        self.CurrentLine += 1
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         var3 = var1 % var2
@@ -56,17 +56,17 @@ class StackMachine:
         var1 = int(self.items.pop())
         var2 = int(self.items.pop())
         if(var1 == '0'):
-            CurrentLine += var2
+            self.CurrentLine += var2
         else:
-            CurrentLine += 1
+            self.CurrentLine += 1
     
     def save(self):
-        CurrentLine += 1
+        self.CurrentLine += 1
         var1 = int(self.items.pop())
         self.save.append(var1)
 
     def get(self, item):
-        CurrentLine += 1
+        self.CurrentLine += 1
         var1 = self.save[-1]
         self.push(var1)
     
