@@ -24,9 +24,10 @@ def main():
             temp = sm.Execute(validTokens[line])
             if(temp != None):
                 print(temp)
-            if(sm.CurrentLine < 0): 
-                print("Trying to execute invalid line:",sm.CurrentLine)
-                sys.exit(0)
+                #print("CurrentLine: ", sm.CurrentLine)
+            #if(sm.CurrentLine < 0): 
+                #print("Trying to execute invalid line:",sm.CurrentLine)
+                #sys.exit(0)
             #print(sm.Execute(validTokens[line]))
                 
         except IndexError:
