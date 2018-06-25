@@ -6,7 +6,13 @@ class StackMachine:
         #self.Execute(items)
         #self.saved = []
         #print(items)
-        
+    
+    def isEmpty(self):
+        return self.size() == 0
+
+    def size(self):
+        return len(self.items)
+
     def push(self, item):
         self.items.append(item)
 
@@ -65,6 +71,8 @@ class StackMachine:
             StackMachine.CurrentLine += 1
         elif(tokens[0] == "pop"):
             StackMachine.CurrentLine += 1
+            if(self.isEmpty()):
+                raise IndexError("Invalid Memory Access")
             return self.pop()
         elif(tokens[0] == "add"):
             self.add()
@@ -88,6 +96,8 @@ class StackMachine:
             self.save()
             StackMachine.CurrentLine += 1
         elif(tokens[0] == "get"):
+            if(len(StackMachine.saved) == 0):
+                raise IndexError("Invalid Memory Access")
             self.get()
             StackMachine.CurrentLine += 1
 """
