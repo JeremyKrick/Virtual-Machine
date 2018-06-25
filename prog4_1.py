@@ -9,18 +9,6 @@ def Tokenize(str):
             else:
                 raise ValueError("Unexpected Token: " + words[n])
         return words
-"""
-def Parse(tokens):
-    for n, i in enumerate(tokens):
-        #print(tokens[n])
-        if(tokens[n] == "pop" or tokens[n] == "add" or tokens[n] == "sub" or 
-            tokens[n] == "mul" or tokens[n] == "div" or tokens[n] == "mod" or 
-            tokens[n] == "skip"): True
-        elif((tokens[n] == "push" or tokens[n] == "save" or tokens[n] == "get") or tokens[n].lstrip('-').isdigit()): True
-        else:
-            raise ValueError("Parse error: " + tokens[n])
-    return tokens
-"""
 
 def Parse(tokens):
     if(isValid(tokens)): True

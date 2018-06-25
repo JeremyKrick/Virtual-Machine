@@ -13,25 +13,25 @@ def main():
     #print(validTokens)
     for tokens in validTokens: 
         Parse(tokens)
-        print(Parse(tokens))
     #print("Number of lines: ", len(validTokens))
 
     sm = StackMachine() # Instantiate StackMachine class
     #sm.Execute(validTokens)
     #print("CurrentLine: ", sm.CurrentLine)
     for line, i in enumerate(validTokens):
+        #print(validTokens[line])
         try:
             temp = sm.Execute(validTokens[line])
             if(temp != None):
                 print(temp)
-                #print("CurrentLine: ", sm.CurrentLine)
-            #if(sm.CurrentLine < 0): 
-                #print("Trying to execute invalid line:",sm.CurrentLine)
-                #sys.exit(0)
-            #print(sm.Execute(validTokens[line]))
-                
+                #print("CurrentLine: ",sm.CurrentLine)
+            if(sm.CurrentLine < 0): 
+                print("Trying to execute invalid line:",sm.CurrentLine)
+                sys.exit(0)
+            #print(sm.Execute(validTokens[line]))         
         except IndexError:
             print("Line",sm.CurrentLine+1,": ",validTokens[line],"caused Invalid Memory Access.")
+        #print("CurrentLine: ", sm.CurrentLine)
     print("Program terminated correctly")
         #print("CurrentLine: ", sm.CurrentLine)
 
