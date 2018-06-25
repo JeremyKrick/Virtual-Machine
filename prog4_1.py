@@ -21,4 +21,3 @@ def isValid(validate):
     return ((validate[0] == "pop" or validate[0] == "add" or validate[0] == "sub" or
              validate[0] == "mul" or validate[0] == "div" or validate[0] == "mod" or 
              validate[0] == "skip") and (len(validate) == 1))
-

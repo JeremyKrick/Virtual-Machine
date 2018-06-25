@@ -48,8 +48,8 @@ class StackMachine:
         var2 = int(self.items.pop())
         if(var1 == '0'):
             StackMachine.CurrentLine += var2
-        else:
-            StackMachine.CurrentLine += 1
+        #else:
+            #StackMachine.CurrentLine += 1
     
     def save(self):
         var1 = int(self.items.pop())
@@ -83,6 +83,7 @@ class StackMachine:
             StackMachine.CurrentLine += 1
         elif(tokens[0] == "skip"):
             self.skip()
+            StackMachine.CurrentLine += 1
         elif(tokens[0] == "save"):
             self.save()
             StackMachine.CurrentLine += 1

@@ -18,10 +18,15 @@ def main():
     sm = StackMachine() # Instantiate StackMachine class
     #sm.Execute(validTokens)
     #print("CurrentLine: ", sm.CurrentLine)
-    for line, i in enumerate(validTokens):
+    #for line, i in enumerate(validTokens):
+    while(sm.CurrentLine < len(validTokens)):
+        #print("CurrentLine: ", sm.CurrentLine)
         #print(validTokens[line])
         try:
-            temp = sm.Execute(validTokens[line])
+            #print(validTokens[sm.CurrentLine])
+            temp = sm.Execute(validTokens[sm.CurrentLine])
+            
+            #temp = sm.Execute(validTokens[line])
             if(temp != None):
                 print(temp)
                 #print("CurrentLine: ",sm.CurrentLine)
@@ -30,7 +35,7 @@ def main():
                 sys.exit(0)
             #print(sm.Execute(validTokens[line]))         
         except IndexError:
-            print("Line",sm.CurrentLine+1,": ",validTokens[line],"caused Invalid Memory Access.")
+            print("Line",sm.CurrentLine,": ",validTokens[sm.CurrentLine],"caused Invalid Memory Access.")
         #print("CurrentLine: ", sm.CurrentLine)
     print("Program terminated correctly")
         #print("CurrentLine: ", sm.CurrentLine)
