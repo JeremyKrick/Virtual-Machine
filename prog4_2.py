@@ -1,6 +1,4 @@
 class StackMachine:
-    #CurrentLine = 0
-    #saved = []
     def __init__(self):
         self.items = []
         self.CurrentLine = 0
