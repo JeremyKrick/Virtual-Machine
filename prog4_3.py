@@ -9,7 +9,6 @@ def main():
     with open(sys.argv[1]) as f:
         for line in f:
             validTokens.append(Tokenize(line))
-    f.close
     #print(validTokens)
     for tokens in validTokens: 
         Parse(tokens)
