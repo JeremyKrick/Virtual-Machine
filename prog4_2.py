@@ -1,12 +1,10 @@
 class StackMachine:
-    CurrentLine = 0
-    saved = []
+    #CurrentLine = 0
+    #saved = []
     def __init__(self):
         self.items = []
         self.CurrentLine = 0
-        #self.Execute(items)
         self.saved = {}
-        #print(items)
     
     def isEmpty(self):
         return self.size() == 0
@@ -55,8 +53,6 @@ class StackMachine:
         var2 = int(self.items.pop())
         if(var1 == 0):
             self.CurrentLine += var2
-        #else:
-            #StackMachine.CurrentLine += 1
     
     def save(self,idx):
         var1 = int(self.items.pop())
@@ -67,8 +63,6 @@ class StackMachine:
         self.push(var1)
     
     def Execute(self, tokens):
-        #print(tokens)
-        #print(self.CurrentLine)
         if(tokens[0] == "push"):
             self.push(tokens[1])
             self.CurrentLine += 1
@@ -103,26 +97,3 @@ class StackMachine:
                 raise IndexError("Invalid Memory Access")
             self.get(tokens[1])
             self.CurrentLine += 1
-"""
-        for n, i in enumerate(tokens):
-            if(tokens[n][0] == "push"):
-                self.push(tokens[n][1])
-            elif(tokens[n][0] == "pop"):
-                self.pop()
-            elif(tokens[n][0] == "add"):
-                self.add()
-            elif(tokens[n][0] == "sub"):
-                self.sub()
-            elif(tokens[n][0] == "mul"):
-                self.mul()
-            elif(tokens[n][0] == "div"):
-                self.div()
-            elif(tokens[n][0] == "mod"):
-                self.mod()
-            elif(tokens[n][0] == "skip"):
-                self.skip()
-            elif(tokens[n][0] == "save"):
-                self.save()
-            elif(tokens[n][0] == "get"):
-                self.get()
-"""
